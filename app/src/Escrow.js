@@ -1,3 +1,5 @@
+import "./escrow.css";
+
 export default function Escrow({
   address,
   arbiter,
@@ -9,29 +11,30 @@ export default function Escrow({
     <div className="existing-contract">
       <ul className="fields">
         <li>
-          <div> Arbiter </div>
-          <div> {arbiter} </div>
+          <div>Arbiter: {arbiter}</div>
         </li>
         <li>
-          <div> Beneficiary </div>
-          <div> {beneficiary} </div>
+          <div> Beneficiary: {beneficiary} </div>
         </li>
         <li>
-          <div> Value </div>
-          <div> {value} </div>
+          <div> Value: {value} </div>
         </li>
-        <div
-          className="button"
-          id={address}
-          onClick={(e) => {
-            e.preventDefault();
-
-            handleApprove();
-          }}
-        >
-          Approve
-        </div>
       </ul>
+      {/* <br />
+      <br />
+      <br /> */}
+      <button
+        className="approve"
+        id={address}
+        onClick={(e) => {
+          e.preventDefault();
+          console.log("button");
+          handleApprove();
+        }}
+      >
+        Approve
+      </button>
+      <div>Deployed contracts: </div>
     </div>
   );
 }

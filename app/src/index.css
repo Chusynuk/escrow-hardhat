@@ -1,21 +1,60 @@
-body {
-  background-color: #eee;
-  display: flex;
-  font-family: 'Muli', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&display=swap");
+
+*,
+html {
+  font-family: "Montserrat", sans-serif;
 }
 
-.contract, .existing-contracts {
+body {
+  background-color: lightgrey;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+}
+
+#root {
+  display: flex;
+}
+
+.contract {
+  max-width: 600px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 20px;
-  display: inline-block;
   padding: 40px;
   border: 1px solid #ddd;
-  background-color: #fff;
+  background-color: #fdfd96;
+  border-radius: 15px;
+  -webkit-box-shadow: 6px 9px 20px 5px rgba(0, 0, 0, 0.59);
+  -moz-box-shadow: 6px 9px 20px 5px rgba(0, 0, 0, 0.59);
+  box-shadow: 6px 9px 20px 5px rgba(0, 0, 0, 0.59);
+}
+
+.existing-contracts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  /* display: inline-block; */
+  padding: 40px;
+  border: 1px solid #ddd;
+  background-color: #fdfd96;
+  border-radius: 15px;
+  -webkit-box-shadow: 6px 9px 20px 5px rgba(0, 0, 0, 0.59);
+  -moz-box-shadow: 6px 9px 20px 5px rgba(0, 0, 0, 0.59);
+  box-shadow: 6px 9px 20px 5px rgba(0, 0, 0, 0.59);
 }
 
 h1 {
   margin: 10px;
   padding: 10px;
   border-bottom: 1px solid #eee;
+  letter-spacing: 4px;
 }
 
 label {
@@ -29,9 +68,24 @@ label {
 input[type="text"] {
   padding: 6px;
   font-size: 18px;
+  width: 245px;
 }
 
-.button {
+input::-webkit-input-placeholder {
+  /* Edge */
+  color: rgb(216, 213, 213);
+}
+
+input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgb(216, 213, 213);
+}
+
+input::placeholder {
+  color: rgb(216, 213, 213);
+}
+
+button.deploy {
   background-color: #f58427;
   color: white;
   text-align: center;
@@ -42,6 +96,7 @@ input[type="text"] {
   font-size: 14px;
   letter-spacing: 1px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .existing-contract ul {
@@ -67,4 +122,11 @@ input[type="text"] {
 .existing-contract .complete {
   color: #5aa75a;
   text-align: center;
+}
+
+#container {
+  max-height: 800px;
+  overflow-y: scroll;
+  border: 1px solid lightgrey;
+  border-radius: 15px;
 }
